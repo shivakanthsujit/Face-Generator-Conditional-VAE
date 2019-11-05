@@ -1,10 +1,10 @@
 # Face Generator from Attributes using a Conditional Variational Autoencoder
 
 This project comprises of two files:
-- `Face_VAE.py` : For training the Conditional VAE 
-- `Face_Generator.py` : To generate faces from a noise vector along with the vector of attributes
+- `Face_VAE.ipynb` : For training the Conditional VAE 
+- `Face_Generator.ipynb` : To generate faces from a noise vector along with the vector of attributes
 
-The model was trained on the a resized version ( 48 x 48 ) version of the [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) dataset. Initially it was trained on a reduced size of 30k images. In the end, it was trained on the entire train set of 160k images, albeit for a reduced training period.
+The model was trained on the a resized version ( 64 x 64 ) version of the [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) dataset. Initially it was trained on a reduced size of 30k images. In the end, it was trained on the entire train set of 160k images, albeit for a reduced training period.
 
 The following attributes from the CelebA dataset were used for training. They were selected based on how easy it would be to identify such attributes on a face as well as the frequency of appearance in the dataset.
 - Black_Hair
@@ -18,6 +18,16 @@ The following attributes from the CelebA dataset were used for training. They we
 - Young
 
 The attribute vector would have values of -1.0 and 1.0 indicating wheter the attribute was present or not. During the generation however continuous values from -1.0 to 1.0 can be given and a gradual increase in the strength of the property is observed. The best example of this is by varying the `Smiling` value. 
+### Smiling: 1.0
+![](images/smile/1.jpg)
+
+### Smiling: 0.0
+
+![](images/smile/2.jpg)
+
+### Smiling: -1.0
+
+![](images/smile/3.jpg)
 
 ![](images/smile/output.gif)
 
