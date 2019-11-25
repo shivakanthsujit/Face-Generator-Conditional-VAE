@@ -2,3 +2,4 @@ test.py
 .ipynb_checkpoints
 .vscode
 celebA/images
+requirements.in

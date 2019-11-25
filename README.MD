@@ -1,8 +1,19 @@
 # Face Generator from Attributes using a Conditional Variational Autoencoder
 
-This project comprises of two files:
+This project comprises of three files:
 - `Face_VAE.ipynb` : For training the Conditional VAE 
 - `Face_Generator.ipynb` : To generate faces from a noise vector along with the vector of attributes
+- `app.py` : An app that provides an easy interface to try out the generator. Requires Streamlit.
+
+### Install neccesary dependencies
+```
+pip install -r requirements.txt
+```
+
+### To test the generator
+```
+streamlit run app.py
+```
 
 The model was trained on the a resized version ( 64 x 64 ) version of the [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) dataset. Initially it was trained on a reduced size of 30k images. In the end, it was trained on the entire train set of 160k images, albeit for a reduced training period.
 
@@ -46,6 +57,7 @@ The saved models will be in the `models` sub folder. It also contains pre traine
 ![](images/test/output.gif)
 
 ## Futhur Developments
-- Deploying the model as a web app so that it is easier to use the generator
+- ~~Deploying the model as a web app so that it is easier to use the generator~~ **Done**, use the `app.py` file to try it out.
+- Deploy to Heroku
 - Currently the resolution of the images seem to be too low. Keeping the current weights, I am considering creating a network for upsampling the images to a higher resolution
 - Or retraining using a higher resolution. But the SuperResolution idea is what I'm starting with.
